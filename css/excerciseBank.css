@@ -1,0 +1,32 @@
+#excercise-result{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    line-height: 55px;
+}
+#number-of-excercises{
+    text-align: right;
+    margin-right: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+.excercise-bank-text{
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+.excercise-bank-text a{
+    text-decoration: none;
+}
+.excercise-bank-text ul{
+    margin-left: 50px;
+}
+.bottom-text{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+.bottom-text a{
+    text-decoration: none;
+}

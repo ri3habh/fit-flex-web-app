@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat Calculator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/jpg" href="favicon-16x16.png"/>
+
+</head>
+<body>
+
+<!--Start of NavBar-->    
+<style>
+  body {margin:0;
+    font-family:"Poppins", sans-serif;
+  }
+  .website-logo img{
+    height: 40px;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: lightskyblue;
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }   
+  .active {
+    background-color: #BB1136;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 17px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 12px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: lightskyblue;
+    color: white;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+    color: #BB1136;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  @media screen and (max-width: 775px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+      display: none;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 775px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .topnav.responsive .dropdown {float: none;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  </style>
+  </head>
+  <body>
+  
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="active">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Fitness Calculators 
+      </button>
+      <div class="dropdown-content">
+          <a href="bodyFatCalc.html">Body Fat Calculator</a>
+          <a href="idealWeightCalc.html">Ideal Weight Calculator</a>
+          <a href="dailyCalCalc.html">Daily Caloric Calculator</a>
+          <a href="bmiCalc.html">BMI Calculator</a>
+      </div>
+    </div> 
+    <div class="dropdown">
+      <button class="dropbtn">Excercise Bank 
+      </button>
+      <div class="dropdown-content">
+        <a href="excerciseBank.html">Excercise Bank</a>
+          <a href="bodyPart.html">Body Part</a>
+          <a href="equipment.html">Excercise Equpment</a>
+          <a href="targetMuscles.html">Target Muscles</a>
+      </div>
+    </div> 
+    <a href="articles.html">Articles</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+
+  <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
+<!--End of NavBar-->
+
+    <!-- Currency exchange rates -->
+  <div class="text-center">Body Fat Calculator</div>
+  <div class="BodyFatAPIContainer">
+    <h4 style="margin-left: 10px; text-align: center;"> Find out your current body fat composition!</h4>
+    <div class="currencyContainer">
+        <p style="margin-left: 5px;">Age:</p> 
+        <input class="form-control marginTopBottom" type="number" id="age" value="25">
+        <p style="margin-left: 5px;">Gender:</p> 
+        <select class="form-control marginTopBottom" id="gender">
+            <option value="male" style="font-family: 'Poppins', sans-serif;">Male</option>
+            <option value="female" style="font-family: 'Poppins', sans-serif;">Female</option>
+          </select>
+          <p style="margin-left: 5px;">Weight (Value is in KG, please enter a value between 60 to 170):</p> 
+        <input class="form-control marginTopBottom" type="number" id="weight" value="70">
+        <p style="margin-left: 5px;">Height (Value is in cm):</p> 
+        <input class="form-control marginTopBottom" type="number" id="height" value="178">
+        <p style="margin-left: 5px;">Neck (Value is in cm):</p> 
+        <input class="form-control marginTopBottom" type="number" id="neck" value="50">
+        <p style="margin-left: 5px;">Waist (Value is in cm):</p> 
+        <input class="form-control marginTopBottom" type="number" id="waist" value="96">
+        <p style="margin-left: 5px;">Hip (Value is in cm):</p> 
+        <input class="form-control marginTopBottom" type="number" id="hip" value="92">
+        <button class="btn-primary" id="button-body-fat">Calculate</button>
+      <div class="body-fat-result">
+        <h4 id= "bodyFatResult">Body Fat %: </h4>
+        <h4 id= "marineBodyFatResult">Body Fat (U.S. Navy Method): </h4>
+        <h4 id= "bodyFatMass">Body Fat Mass: </h4>
+        <h4 id= "leanBodyMass">Lean Body Mass: </h4>
+      </div>
+    </div>
+  </div>
+
+     <!--Start of Footer-->    
+     <style>
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: lightskyblue;
+        color: white;
+        text-align: center;
+      }
+      .website-logo img{
+        height: 50px;
+      }
+      </style>
+      
+      <div class="footer">
+        <a href="index.html" class="website-logo"><img src="fitflexlogobruh.png" alt="fix+flex logo"></a>
+      </div>
+    <!--End of Footer-->     
+
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

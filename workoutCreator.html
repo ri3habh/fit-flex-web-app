@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Creator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="favicon-16x16.png"/>
+</head>
+<body>
+
+    <nav>
+        <p class="website-title"><img src="fitflexlogobruh.png" alt="fix+flex logo"></p>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Fitness Calculators</a>
+                <ul>
+                    <li><a href="bodyFatCalc.html">Body Fat Calculator</a></li>
+                    <li><a href="idealWeightCalc.html">Ideal Weight Calculator</a></li>
+                    <li><a href="dailyCalCalc.html">Daily Caloric Calculator</a></li>
+                    <li><a href="bmiCalc.html">BMI Calculator</a></li>
+                </ul>
+            </li>
+            <li><a href="excerciseBank.html">Excercise Bank</a>
+                <ul>
+                    <li><a href="bodyPart.html">Body Part</a></li>
+                    <li><a href="equipment.html">Excercise Equpment</a></li>
+                    <li><a href="targetMuscles.html">Target Muscles</a></li>
+                    <li><a href="workoutCreator.html">Workout Generator</a></li>
+                </ul>
+            </li>
+            <li><a href="articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <div class="text-center">Workout Creator</div>
+    <h3>There are 5 most common types of workout "splits". To learn more about them, visit the <a href="https://www.bodybuilding.com/content/the-ultimate-guide-to-an-effective-training-split.html">following link.</a> (All Credit to  <a href="https://www.bodybuilding.com/author/bill-geiger">Bill Geiger</a>)</h3> 
+    <h3>To summarize the above link (which was amazing tips, you should definitely take the time to read through it), the 5 main types of workout splits, look something like this. Of courses, these aren't concrete but your own workout splits should look like the following:</h3>
+    <h4>Whole Body Split (great for beginners!)</h4>
+    <ul>
+        <li><b> Day 1:</b> All Muscle Groups</li>
+        <li><b> Day 2:</b> Rest</li>
+        <li><b> Day 3:</b> All Muscle Groups</li>
+        <li><b> Day 4:</b> Rest</li>
+        <li><b> Day 5:</b> All Muscle Groups</li>
+        <li><b> Day 6/7:</b> Rest</li>
+    </ul>
+    <h4>Upper and Lower Body Split </h4>
+    <ul>
+        <li><b> Day 1:</b> Upper-body muscle groups</li>
+        <li><b> Day 2:</b> Lower-body muscle groups</li>
+        <li><b> Day 3:</b> Rest</li>
+        <li><b> Day 4:</b> Upper-body muscle groups</li>
+        <li><b> Day 5:</b> Lower-body muscle groups</li>
+        <li><b> Day 6/7:</b> Rest</li>
+    </ul>
+    <h4>Push/Pull/Legs (very popular amoung many gym-goers!)</h4>
+    <ul>
+        <li><b> Day 1:</b> Push (Chest, shoulders, triceps)</li>
+        <li><b> Day 2:</b> Pull (Back, biceps)</li>
+        <li><b> Day 3:</b> Legs</li>
+        <li><b> Day 4:</b> Push (Chest, shoulders, triceps)</li>
+        <li><b> Day 5:</b> Pull (Back, biceps)</li>
+        <li><b> Day 6:</b> Legs</li>
+        <li><b> Day 7:</b> Rest</li>
+    </ul>
+    <h4>Four Day Split (High volume + intensity training)</h4>
+    <ul>
+        <li><b> Day 1:</b> Back, biceps</li>
+        <li><b> Day 2:</b> Chest, triceps</li>
+        <li><b> Day 3:</b> Rest</li>
+        <li><b> Day 4:</b> Legs</li>
+        <li><b> Day 5:</b> Shoulders</li>
+        <li><b> Day 6/7:</b> Rest</li>
+    </ul>
+    <h4>Five Day Split (Even higher volume + Intensity)</h4>
+    <ul>
+        <li><b> Day 1:</b> Chest</li>
+        <li><b> Day 2:</b> Back</li>
+        <li><b> Day 3:</b> Shoulders, upper traps</li>
+        <li><b> Day 4:</b> Legs</li>
+        <li><b> Day 5:</b> Biceps, triceps</li>
+        <li><b> Day 6/7:</b> Rest</li>
+    </ul>
+
+    <h3>Remember, these splits don't include smaller muscle groups, such as calves or abdomials. It also dosen't include cardio. These can be included as you see fit.</h3>
+
+    <h4>Now, with the information provided above, select which split is appealing to you. Then, a selection of excercises will be provided to you, which you can adopt in your own workout plans.</h4>
+
+    <select class="form-control marginTopBottom" id="workoutSplit">
+        <option value="whole-body-split">whole-body-split</option>
+        <option value="upper-lower-body-split">upper-lower-body-split</option>
+        <option value="push-pull-legs-split">push-pull-legs-split</option>
+        <option value="four-day-split">four-day-split</option>
+        <option value="five-day-split">five-day-split</option>
+    </select>
+    <button class="btn-primary" id="button-split-Excercise">Retrieve Excercises</button>
+
+    <div id="day-one-result"></div>
+    <div id="day-two-result"></div>
+    <div id="day-three-result"></div>
+    <div id="day-four-result"></div>
+    <div id="day-five-result"></div>
+    <div id="day-six-result"></div>
+    <div id="day-seven-result"></div>
+
+    <script src="js/workoutMaker.js" type="module"></script>
+
+
+</body>
+</html>
