@@ -213,6 +213,7 @@ input[type=number], select {
   padding-top: 25px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 25px;
 }
 .homepage-words a{
   text-decoration: none;
